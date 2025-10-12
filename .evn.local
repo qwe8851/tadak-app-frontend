@@ -1,0 +1,8 @@
+# App environment configuration
+
+# Environment
+APP_ENV=local
+
+# API endpoints
+APP_UI_URI=https://api.tadakapp.com
+APP_API_URI=https://ui.tadakapp.com
