@@ -1,0 +1,11 @@
+{
+  "login": {
+    "title": "ログイン",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "button": "ログイン"
+  },
+  "home": {
+    "welcome": "{{name}}さん, ようこそ!"
+  }
+}

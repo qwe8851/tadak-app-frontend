@@ -1,7 +1,16 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
+import { tokenAtom, userAtom } from "@/store/authAtom";
+import { useSetAtom } from "jotai";
+
 export default function LoginScreen() {
+  const { t, i18n } = useTranslation();
+
+  const setUser = useSetAtom(userAtom);
+  const setToken = useSetAtom(tokenAtom);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -10,18 +19,21 @@ export default function LoginScreen() {
     console.log("로그인 시도:", { email, password });
 
     // navigation.navigate("Main"); // RootNavigator 기준
+
+    setUser({ id: "1", name: "홍길동" });
+    setToken("fake_token");
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>로그인</Text>
+      <Text style={styles.title}>Tacak</Text>
 
       <TextInput style={styles.input} placeholder="이메일" value={email} onChangeText={setEmail} keyboardType="email-address" autoCapitalize="none" />
 
       <TextInput style={styles.input} placeholder="비밀번호" value={password} onChangeText={setPassword} secureTextEntry />
 
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>로그인</Text>
+        <Text style={styles.buttonText}>{t("login.button")}</Text>
       </TouchableOpacity>
     </View>
   );
