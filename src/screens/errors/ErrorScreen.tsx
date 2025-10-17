@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function LoginScreen() {
+export default function SignInScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>로그인페이지</Text>

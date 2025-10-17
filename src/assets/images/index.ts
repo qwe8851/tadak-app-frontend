@@ -1,4 +1,4 @@
 export const Images = {
-  logo: require("./logo.png"),
-  splash: require("./splash.png"),
+  logoTyping: require("./logo-typing.webp"),
+  // splash: require("./splash.png"),
 };
